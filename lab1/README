@@ -1,2 +1,14 @@
+
 This has been editted
 
+
+WHat I am Turning in:
+Makefile 1 //this function will create an jar application for HelloUser
+Makefile 2//this function will create a jar application for HelloUser2
+Makefile 3// Same as Makefil2
+
+README //this tells what i did in this lab
+
+HelloUser2.java/.class //this program will ask if this program is working and say yes
+
+HelloUser.java/.class //this program will give details about the unix server
