@@ -1,1 +1,10 @@
-Edit before submitting
+What I am turning in:
+
+Reverse.java file --- this is the editted program specified in pa1
+Makefile   --- this will create a Reverse jar file that can be run.
+
+
+Notes
+
+for my Makefile, I copied the template given in Lab1 and editted so it works
+for Reverse.java
