@@ -1,3 +1,16 @@
+/*
+Kameron Gill 
+ID: 1476833
+Email:kgill2@ucsc.edu
+
+Partner: Shashank Biradir
+email:sbiradar@ucsc.edu
+
+this program reverses an Array in 3 different ways and also
+finds the largest, smallest value's index.
+*/
+
+
 class Reverse{
 public static void main(String[] args){
 
