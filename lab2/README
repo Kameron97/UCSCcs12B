@@ -1,1 +1,16 @@
-Edit before submitting
+Kameronjeet Singh Gill
+1476833
+kgill2@ucsc.edu
+
+I worked on this lab all by myself.
+
+Files included:
+	README   - Description of what was done
+	Makefile - script to compile FileReverse and make a jar.
+	FileReverse.java - Java program assigned to us to finish
+		           this program takes in a file of texts and
+			   will reverse the order of the letters in each word
+
+to run:
+make
+FileReverse
