@@ -2,7 +2,7 @@
 // FileTokens.java
 // Illustrates file IO and tokenization of strings.
 //-----------------------------------------------------------------------------
-3
+
 import java.io.*;
 import java.util.Scanner;
 class FileTokens{
