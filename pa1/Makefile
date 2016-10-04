@@ -1,8 +1,8 @@
-JAVASRC = Reverse.java
+JAVASRC = Recursion.java
 SOURCES = README Makefile $(JAVASRC)
-MAINCLASS = Reverse
-CLASSES = Reverse.class
-JARFILE = Reverse
+MAINCLASS = Recursion
+CLASSES = Recursion.class
+JARFILE = Recursion
 all: $(JARFILE)
 $(JARFILE): $(CLASSES)
 	echo Main-class: $(MAINCLASS) > Manifest
