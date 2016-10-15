@@ -1,1 +1,9 @@
-Edit before submitting
+Kameronjeet Gill
+1476833
+
+the point of this lab is to make a program in C, FileReverse.C, that grabs a text file and creates another
+ file with the words backward.
+
+README
+FileReverse.c
+Makefile - compiles FileReverse.c
