@@ -22,17 +22,16 @@ class Search{
   public static void main(String[] args) throws IOException{
     int lineCount =0;       //will keep track of how many lines he text file spans
     String word = null;     //this is the word from the file text that will be assigned to
-    Scanner in = new Scanner(new File(args[0]));
 
 //most of the code here is gotten from the given LC.java file provided
 //by Charlie as an example for this assignment
 
-    if (args.length <1) {     //if there is nothing in the file, then there is nothing
+    if (args.length <2) {     //if there is nothing in the file, then there is nothing
       System.out.println("Usage: Not enough data"); //for the function to compare to
       System.exit(1);                           //and the function will print error messages and exit
         }
 
-
+Scanner in = new Scanner(new File(args[0]));
 while (in.hasNextLine()){         //while there is still more words on the filetext....
       word = in.nextLine();       //word will be assigned the word on the current line
       lineCount++;                //counter for line will go up by one
@@ -40,9 +39,9 @@ while (in.hasNextLine()){         //while there is still more words on the filet
 
     String[] wordCount = new String[lineCount];     //array to store the words in filetest
     int[] count = new int[lineCount];               //array to store how many lines there are
-    //in = new Scanner (new File(args[0]));
+    in = new Scanner (new File(args[0]));
 
-    for (int i = 1; i < count.length; i++){      //this for loop assigns the index from [0...x]
+    for (int i = 1; i <= count.length; i++){      //this for loop assigns the index from [0...x]
       count[i-1] = i;                             // to the array count.
     }
       for( int i = 0; in.hasNextLine(); i++){   //this for loops assigns the word on the filetext
@@ -60,8 +59,9 @@ while (in.hasNextLine()){         //while there is still more words on the filet
           else{//this will iterate the function from 1 all the way to the end of the line
             System.out.println(binarySearch(wordCount, count, 0, wordCount.length-1,args[i])+ " line is where "+ args[i]+" is found.");
           }                            //binarySearch will try to find the requested word and
-                                            //its line number on the text file.
-  
+
+            in.close();                                //its line number on the text file.
+
 
 
 
@@ -141,7 +141,7 @@ public static void merge(String[] A, int[] B, int p, int q, int r){
 static int binarySearch(String [] A, int[] B, int p, int r,  String target){
    int q;
 
-   if(p  > r) {         // will check the basecase, if 0>length of array return -1
+   if(p  <r) {         // will check the basecase, if 0>length of array return -1
       return -1;        // meaning there is no target in array A
     }
    else{
