@@ -27,7 +27,7 @@ class Search{
 //most of the code here is gotten from the given LC.java file provided
 //by Charlie as an example for this assignment
 
-    if (args.length <0) {     //if there is nothing in the file, then there is nothing
+    if (args.length <1) {     //if there is nothing in the file, then there is nothing
       System.out.println("Usage: Not enough data"); //for the function to compare to
       System.exit(1);                           //and the function will print error messages and exit
         }
@@ -40,9 +40,9 @@ while (in.hasNextLine()){         //while there is still more words on the filet
 
     String[] wordCount = new String[lineCount];     //array to store the words in filetest
     int[] count = new int[lineCount];               //array to store how many lines there are
-    in = new Scanner (new File(args[0]));
+    //in = new Scanner (new File(args[0]));
 
-    for (int i = 1; i <= count.length; i++){      //this for loop assigns the index from [0...x]
+    for (int i = 1; i < count.length; i++){      //this for loop assigns the index from [0...x]
       count[i-1] = i;                             // to the array count.
     }
       for( int i = 0; in.hasNextLine(); i++){   //this for loops assigns the word on the filetext
@@ -61,7 +61,7 @@ while (in.hasNextLine()){         //while there is still more words on the filet
             System.out.println(binarySearch(wordCount, count, 0, wordCount.length-1,args[i])+ " line is where "+ args[i]+" is found.");
           }                            //binarySearch will try to find the requested word and
                                             //its line number on the text file.
-  //  in.close();
+  
 
 
 
