@@ -141,15 +141,15 @@ public static void merge(String[] A, int[] B, int p, int q, int r){
 static int binarySearch(String [] A, int[] B, int p, int r,  String target){
    int q;
 
-   if(p  <r) {         // will check the basecase, if 0>length of array return -1
+   if(p   ==r) {         // will check the basecase, if 0>length of array return -1
       return -1;        // meaning there is no target in array A
     }
    else{
       q = (p+r)/2;      //q is the midway point of the length of the array
       if(A[q].compareTo(target) == 0){      //if the word at poistion Q is equal to the target
          return B[q];                       //that means its the same word and return the index of it
-      }else if(A[q].compareTo(target)< 0){  //if A[q] is before target word, then
-         return binarySearch(A, B, p, q-1, target);  //recursive go down the leftside of the array
+      }else if(A[q].compareTo(target) <0){  //if A[q] is before target word, then
+         return binarySearch(A, B, p, q, target);  //recursive go down the leftside of the array
       }else{                                          //if its larger than it wil
          return binarySearch(A, B,q+1, r, target);    //will recursively go from the middle to the rightside
       }
