@@ -20,6 +20,9 @@ import java.util.Scanner;
 
 class Search{
   public static void main(String[] args) throws IOException{
+    int lineCount =0;       //will keep track of how many lines he text file spans
+    String word = null;     //this is the word from the file text that will be assigned to
+    Scanner in = new Scanner(new File(args[0]));
 
 //most of the code here is gotten from the given LC.java file provided
 //by Charlie as an example for this assignment
@@ -28,9 +31,7 @@ class Search{
       System.out.println("Usage: Not enough data"); //for the function to compare to
       System.exit(1);                           //and the function will print error messages and exit
         }
-        int lineCount =0;       //will keep track of how many lines he text file spans
-        String word = null;     //this is the word from the file text that will be assigned to
-    Scanner in = new Scanner(new File(args[0]));
+
 
 while (in.hasNextLine()){         //while there is still more words on the filetext....
       word = in.nextLine();       //word will be assigned the word on the current line
@@ -52,11 +53,15 @@ while (in.hasNextLine()){         //while there is still more words on the filet
 
 
     mergeSort(wordCount, count, 0, count.length-1);     //this will split up and also order the filetext in alphabetical order
-    for (int i = 1; i<args.length; i++)   //this will iterate the function from 1 all the way to the end of the line
-      System.out.println(binarySearch(wordCount, count, 0, wordCount.length-1,args[i]));
-                                            //binarySearch will try to find the requested word and
+    for (int i = 1; i<args.length; i++)
+          if(binarySearch(wordCount, count, 0, wordCount.length-1,args[i])== -1){
+              System.out.println(args[i] +" is not found");
+          }
+          else{//this will iterate the function from 1 all the way to the end of the line
+            System.out.println(binarySearch(wordCount, count, 0, wordCount.length-1,args[i])+ " line is where "+ args[i]+" is found.");
+          }                            //binarySearch will try to find the requested word and
                                             //its line number on the text file.
-    in.close();
+  //  in.close();
 
 
 
