@@ -1,1 +1,15 @@
-Edit before submitting
+KameronJeet Gill
+1476833
+kgill2@ucsc.edu
+
+
+THis program takes in a text file and analyzes each lines content for the spaces, numbers, alphabet, and puncutations
+
+
+Content:
+
+Makefile: makes an executable charType, tests charType with valgrind, and cleans directory
+
+README:  summary of the lab and also content
+
+charType.c:  c program that analyzes a textfile.
