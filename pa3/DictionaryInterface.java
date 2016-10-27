@@ -32,11 +32,11 @@ public interface DictionaryInterface{
 
    // makeEmpty()
    // pre: none
-   public void makeEmpty();
+   //public void makeEmpty();
 
    // toString()
    // returns a String representation of this Dictionary
    // overrides Object's toString() method
    // pre: none
-   public String toString();
+   //public String toString();
 }
