@@ -1,1 +1,15 @@
-Edit before submitting
+Kameronjeet Singh Gill
+kgill2@ucsc.edu
+1476833
+
+
+CONTENT OF FILE:
+
+Dictionary.java - program that makes ADT and also has certain functions tied to it.
+DictionaryClient.java - unchanged and given to us by Charlie. It tests to see if Dictionary.java is working
+DictionaryInterface - unchanged and given to us by Charlie. interface for Dictionary.java to use
+DictionaryTest.java - program to test if my Dictionary.java functions were working properly.
+DuplicateKeyException.java -  program to find DuplicateKeyException in tests/Dictionary
+KeyNotFoundException.java -program to find KeyNotFoundException in tests/Dictionary
+Makefile -  copied from the example given to us by Charlie. will compile all .java files in directory and create exec DictionaryClient file
+README - summary of what each file does in directory.
