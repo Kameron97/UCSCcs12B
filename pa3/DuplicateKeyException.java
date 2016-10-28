@@ -1,5 +1,5 @@
-public class DuplicateKeyException extends RuntimeException{
-	public DuplicateKeyException(String s) {
-		super(s);
-	}
+public class DuplicateKeyException extends RuntimeException {
+public DuplicateKeyException(String s) {
+								super(s);
+}
 }
