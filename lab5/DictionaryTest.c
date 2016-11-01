@@ -11,6 +11,31 @@ int main(int argc, char* argv[]){
         char* v;
 
 
-        printf("%s\n", (isEmpty(A) ? "true" : "false"));
+        printf("%s\n", (isEmpty(A) ? "true" : "false")); //print flase
         printf("%d\n", size(A));
-        }
+
+
+        insert(A, "one", "fgfdgdf");
+
+        printf("%s\n", (isEmpty(A) ? "true" : "false")); //print flase
+        printf("%d\n", size(A));
+
+        //insert(A, "one", "dsfdsfs"); //erroe thrown
+        insert(A, "two", "aa");
+        insert(A, "three", "bb");
+
+        delete(A, "two");
+        printf("%d\n", size(A));
+
+        //delete(A, "four");   error
+        printf("%d\n", size(A));
+
+        printDictionary(stdout, A);
+
+        makeEmpty(A);
+
+        printf("%s\n", (isEmpty(A) ? "true" : "false")); //print flase
+
+
+
+}

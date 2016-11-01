@@ -1,1 +1,19 @@
-Edit before submitting
+Kameronjeet Singh GIll
+kgill2@ucsc.ed
+
+1476833
+
+
+Table of Content:
+
+README -  Expanation of what is inside folder
+
+Dictionary.c - a C program that is an ADT/Node. It has certain functions to manipulate the Node.
+
+DictionaryClient.c -  program to test our Dictionary.c
+
+DictionaryTest.c  - program written by me to test my Dictionary.c program
+
+Dictionary.h - program that dictates what the ADT does. given to us by Charlie
+
+Makefile - this will compile all parts of the card and create an executable DictionaryClient
