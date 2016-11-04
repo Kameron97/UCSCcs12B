@@ -26,7 +26,7 @@ public static void main(String[] args){
 
   System.out.println(test.peek()); //print 2
 
-  test.dequeueAll();
+  //test.dequeueAll();
 
   System.out.println(test.isEmpty());//print true
 
@@ -36,6 +36,7 @@ public static void main(String[] args){
   }
 
   System.out.println(test); //print0 1 2 3 4 5 6 7 8 9
+  test.dequeue();
   System.out.println(test.peek()); //print 9
 
 
