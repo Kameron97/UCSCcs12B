@@ -30,16 +30,16 @@ public interface QueueInterface{
    // peek()
    // pre: !isEmpty()
    // post: returns item at front of Queue
-   //public Object peek() throws QueueEmptyException;
+   public Object peek() throws QueueEmptyException;
 
    // dequeueAll()
    // sets this Queue to the empty state
    // pre: !isEmpty()
    // post: isEmpty()
-   //public void dequeueAll() throws QueueEmptyException;
+   public void dequeueAll() throws QueueEmptyException;
 
    // toString()
    // overrides Object's toString() method
-   //public String toString();
+   public String toString();
 
 }
