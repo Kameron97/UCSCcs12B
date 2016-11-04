@@ -25,7 +25,7 @@ public interface QueueInterface{
    // deletes and returns item from front of this Queue
    // pre: !isEmpty()
    // post: this Queue will have one fewer element
-   //public Object dequeue() throws QueueEmptyException;
+   public Object dequeue() throws QueueEmptyException;
 
    // peek()
    // pre: !isEmpty()
