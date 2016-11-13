@@ -1,7 +1,7 @@
 //List.java
 
 //this is based of  IntergerList Array
-public class List<T> implements ListInterface<T> {
+ class List<T> implements ListInterface<T> {
 //private items
 
 private static final int INITIAL_SIZE = 1;
@@ -44,7 +44,7 @@ public int size(){
 //otherwise error is thrown
 public T get(int index) throws ListIndexOutOfBoundsException {
         if (index <1 || index > numItems) {
-                throw new ListIndexOutOfBoundsException("Cannot use get(). Index is not valid");
+                throw new ListIndexOutOfBoundsException("get(): invalid index:"+ index);
         }
         else {
                 return item[arrayIndex(index)];
@@ -86,8 +86,30 @@ public void remove(int index) throws ListIndexOutOfBoundsException {
 public void removeAll(){
   numItems = 0;
 }
+public String toString(){
+      String s="";
+      for(int i=0; i<numItems;i++){
+        s += item[i]+ " ";
+      }
+      return s;
+    }
+    /*equals
+     *Pos: returns true or false if the contents of the list equal on another list
+     */
+    @SuppressWarnings("unchecked")
+    public boolean equals(Object rhs){
+      boolean eq =false;
+      List<T> R = null;
 
-
-
-
+      if(this.getClass() == rhs.getClass()){
+        int i=0;
+        R = (List<T>) rhs;
+        eq = (this.numItems == R.numItems);
+        while( eq && i<numItems){
+          eq = (this.item[i] == R.item[i]);
+          i++;
+        }
+      }
+      return eq;
+    }
 }

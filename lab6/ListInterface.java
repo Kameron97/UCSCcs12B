@@ -24,17 +24,17 @@ public interface ListInterface<T>{
    // inserts newItem in this List at position index
    // pre: 1 <= index <= size()+1
    // post: !isEmpty(), items to the right of newItem are renumbered
-   //public void add(int index, T newItem) throws ListIndexOutOfBoundsException;
+   public void add(int index, T newItem) throws ListIndexOutOfBoundsException;
 
    // remove
    // deletes item from position index
    // pre: 1 <= index <= size()
    // post: items to the right of deleted item are renumbered
-   //public void remove(int index) throws ListIndexOutOfBoundsException;
+   public void remove(int index) throws ListIndexOutOfBoundsException;
 
    // removeAll
    // pre: none
    // post: isEmpty()
-   //public void removeAll();
+   public void removeAll();
 
 }
