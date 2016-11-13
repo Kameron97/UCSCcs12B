@@ -1,9 +1,13 @@
-//List.java
+//Kameronjeet Singh Gilll
+//1476833
+//kgill2@Ucsc.edu
 
 //this is based of  IntergerList Array
- class List<T> implements ListInterface<T> {
-//private items
+//most of the functions are based on the code given by Charlie on IntergerList Array
+@SuppressWarnings("overrides")
+class List<T> implements ListInterface<T> {
 
+//private functions
 private static final int INITIAL_SIZE = 1;
 private int physicalSize;
 private T[] item;
@@ -30,12 +34,12 @@ private void doubleItemArray(){
         }
         item = newArray;
 }
-//checks to see if List is empty
+//checks to see if List is empty by seeing if numItems is 0.
 public boolean isEmpty(){
         return numItems ==0;
 }
 
-//checks to see size by returning
+//checks to see size by returning numItems.
 public int size(){
         return numItems;
 }
@@ -48,16 +52,12 @@ public T get(int index) throws ListIndexOutOfBoundsException {
         }
         else {
                 return item[arrayIndex(index)];
-
-
-
         }
 }
-
+//this functions is responsible for adding an T object on
 public void add(int index, T newItem) throws ListIndexOutOfBoundsException {
-        if( index<1 || index>(numItems+1) ) {
-                throw new ListIndexOutOfBoundsException(
-                              "Cannot use function add(). Index is not valid");
+        if( index<1 || index>(numItems+1) ) { //checks to see if index is negative or if index is bigger than items in the arraylist
+                throw new ListIndexOutOfBoundsException("Cannot use function add(). Index is not valid");
         }
 
         if( numItems == physicalSize ) {
@@ -71,6 +71,7 @@ public void add(int index, T newItem) throws ListIndexOutOfBoundsException {
         numItems++;
 }
 
+//this function will remove the value at a certain index and append the arraylist to continue on
 public void remove(int index) throws ListIndexOutOfBoundsException {
         if ( index<1 || index >numItems) {
                 throw new ListIndexOutOfBoundsException("cannot use function remove(). index is not valid");
@@ -82,34 +83,33 @@ public void remove(int index) throws ListIndexOutOfBoundsException {
                 numItems--;
         }
 }
-
+//removes all element
 public void removeAll(){
-  numItems = 0;
+        numItems = 0;
+        item = null;
 }
 public String toString(){
-      String s="";
-      for(int i=0; i<numItems;i++){
-        s += item[i]+ " ";
-      }
-      return s;
-    }
-    /*equals
-     *Pos: returns true or false if the contents of the list equal on another list
-     */
-    @SuppressWarnings("unchecked")
-    public boolean equals(Object rhs){
-      boolean eq =false;
-      List<T> R = null;
-
-      if(this.getClass() == rhs.getClass()){
-        int i=0;
-        R = (List<T>) rhs;
-        eq = (this.numItems == R.numItems);
-        while( eq && i<numItems){
-          eq = (this.item[i] == R.item[i]);
-          i++;
+        String word="";
+        for(int i=0; i<numItems; i++) {
+                word += item[i]+ " ";
         }
-      }
-      return eq;
-    }
+        return word;
+}
+
+@SuppressWarnings("unchecked")
+public boolean equals(Object rhs){
+        boolean eq =false;
+        List<T> R = null;
+
+        if(this.getClass() == rhs.getClass()) {
+                int i=0;
+                R = (List<T>)rhs;
+                eq = (this.numItems == R.numItems);
+                while( eq && i<numItems) {
+                        eq = (this.item[i] == R.item[i]);
+                        i++;
+                }
+        }
+        return eq;
+}
 }

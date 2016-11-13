@@ -16,11 +16,13 @@ System.out.println(A.size()); //print 2
 
 A.remove(2);
 
-//System.out.println(  A.get(2)); //print errors
+System.out.println(  A); //print errors
 
 A.removeAll();
 
 System.out.println(A.isEmpty());// print true
+System.out.println(  A); //print errors
+
 
 
 }

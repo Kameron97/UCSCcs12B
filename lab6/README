@@ -1,1 +1,14 @@
-Edit before submitting
+This program uses Generics in order to make an arraylist using objects. This specific arraylist is based off of the
+arraylist given as an example.
+
+FILES INCLUDED:
+
+Makefile -- this will compile all of the files with the command "make"
+
+ListInterface.java -- client program that gives functions to List.java
+
+List.java -- Node List that is an arraylist Node that contains all types of values
+
+ListTest.java -- A test program that makes sure List.java functions are working properly
+
+List.java -- program that contains all of the functions that
