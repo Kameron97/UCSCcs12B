@@ -10,6 +10,7 @@ public static void main(String[] args) throws IOException {
         Scanner scan = null;
         PrintWriter report = null;
         PrintWriter trace = null;
+        Queue Storage = new Queue();
 
 //checks to see if command line is write
 //#1 on list
@@ -24,10 +25,18 @@ public static void main(String[] args) throws IOException {
         trace = new PrintWriter(new FileWriter(args[2] + ".trc"));
 
         //#3 on list.  get the input of m Jobs
-        int m = getJob(scan);
+        int m = Integer.parseInt(scan.nextLine);
+        while(scan.hasNext()){
+            Storage.enqueue((Job)getJob(scan));
+        }
 
-        for ( int n = 1; n<m-1; n++){
-          Queue processor = new Queue(n);
+        //#4 on the list. iterate n->m-1
+        for ( int n = 1; n<m-1; n++) {
+                //#5 on list. but might need to do something else.
+                Queue processor = new Queue(n);
+                for ( int i = 0 ; i<n; i++){
+                  processor[i] = new Queue();
+                }
         }
 
 
