@@ -1,1 +1,13 @@
-Edit before submitting
+Kameron Gill
+1476833
+kgill2@ucsc.edu
+
+This project contains:
+
+Job.java -- this is an ADT object given to us by the professor
+Makefile -- given to us by the professor this will compile the code
+Queue.java -- an ADT made by me. This will manipulate Queue.
+QueueEmptyException -- Given to us by the professor. Deals with error in Queue.java
+QueueTest.java    -- this tests Queue.java. Made by me
+QueueInterface.java   -- given to us by the professor. is the interface for Queue
+Simulation.java     --created by me. this simulates waiting in a grocery store line and calculates wait time.

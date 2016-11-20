@@ -1,10 +1,8 @@
-// April Dawn Kester
-// akester
-// CMPS 12B
-// July 18, 2013
-// Client module for testing Queue and Job ADT's
-// Simulation.java
-// No special instructions
+//Kameronjeet Gill
+//1476833
+//kgill2@ucsc.edu
+
+//this program stimulates a grocery line.
 
 import java.io.*;
 import java.util.Scanner;
@@ -82,9 +80,9 @@ public static void main(String[] args) throws IOException {
                 //    5.      declare and initialize an array of n processor Queues and any
                 //            necessary storage Queues
                 for(int i = 1; i<storTemp.length()+1; i++) {
-                        j = (Job)storTemp.dequeue();
+                        j = (Job)storTemp.dequeue();    //store top of storTemp into J.
                         j.resetFinishTime();
-                        storage.enqueue(j);
+                        storage.enqueue(j);             //add it back
                         storTemp.enqueue(j);
                 }
 
@@ -112,48 +110,48 @@ public static void main(String[] args) throws IOException {
                 for(int i = 1; i < processors+1; i++) {
                         trace.println(i + ": " + processorQueues[i]);
                 }
-                //trace.println("finished: " + finished.toString());
 
 
                 //    6.      while unprocessed jobs remain  {
 
                 while(finished.length()!=m) {
-                        int compFinal = Integer.MAX_VALUE;
-                        int finalIndex = 1;
+                        int finalComp = Integer.MAX_VALUE;
+                        int lastIndex = 1;
                         int comp = -1;
                         int length = -1;
-                        int finalLength = -1;
+                        int lengthFinal = -1;
                         Job compare = null;
 
                         //    7.          determine the time of the next arrival or finish event and
                         //                update time
 
-                        if(!storage.isEmpty()) {
-                                compare = (Job)storage.peek();
-                                compFinal = compare.getArrival();
-                                finalIndex = 0;
+                        if(!storage.isEmpty()) {    //checks to see if storage is not empty
+                                compare = (Job)storage.peek();    //recieves top Job of storage
+                                finalComp = compare.getArrival(); //arrival.
+                                lastIndex = 0;
                         }
+                        //got some help from a tutor for the below
 
-                        for(int i = 1; i < processors+1; i++) {
+                        for(int i = 1; i < processors+1; i++) {   //iterates i-> n+1
                                 if(processorQueues[i].length() != 0) {
                                         compare = (Job)processorQueues[i].peek();
                                         comp = compare.getFinish();
                                 }
                                 if(comp == -1) {
-                                }else if(comp<compFinal) {
-                                        compFinal = comp;
-                                        finalIndex = i;
+                                }else if(comp<finalComp) {
+                                        finalComp = comp;
+                                        lastIndex = i;
                                 }
-                                time = compFinal;
+                                time = finalComp;
                         }
 
-                        if(finalIndex == 0) {
+                        if(lastIndex == 0) {
                                 int tempIndex = 1;
-                                finalLength = processorQueues[tempIndex].length();
+                                lengthFinal = processorQueues[tempIndex].length();
                                 for(int i = 1; i < processors+1; i++) {
                                         length = processorQueues[i].length();
-                                        if(length<finalLength) {
-                                                finalLength = length;
+                                        if(length<lengthFinal) {
+                                                lengthFinal = length;
                                                 tempIndex = i;
                                         }
                                 }
@@ -167,7 +165,7 @@ public static void main(String[] args) throws IOException {
                         }
 
                         else{
-                                compare = (Job)processorQueues[finalIndex].dequeue();
+                                compare = (Job)processorQueues[lastIndex].dequeue();
                                 finished.enqueue(compare);
                                 int tempWait = compare.getWaitTime();
                                 if(tempWait > maxWait) {
@@ -175,20 +173,21 @@ public static void main(String[] args) throws IOException {
                                 }
                                 totalWait += tempWait;
 
-                                if(processorQueues[finalIndex].length() >= 1) {
-                                        compare = (Job)processorQueues[finalIndex].peek();
+                                if(processorQueues[lastIndex].length() >= 1) {
+                                        compare = (Job)processorQueues[lastIndex].peek();
                                         compare.computeFinishTime(time);
                                 }
 
-                        }//end else
+                        }
 
+                        //prints to trace file
                         trace.println();
                         trace.println("time=" + time);
                         trace.println("0: " + storage.toString()+ finished.toString());
                         for(int i = 1; i < processors+1; i++) {
                                 trace.println(i + ": " + processorQueues[i]);
                         }
-                        //trace.println("finished: " + finished.toString());
+
 
                 }
 
