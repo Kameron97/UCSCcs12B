@@ -43,21 +43,18 @@ public int length(){
 }
 
 //places an object at the top of the Node
-public void enqueue(Object newItem){
-        if( head != null) {
-                Node temp = head;
-                while(temp.next != null)    //iterates through Node temo until its finds a null.
-                        temp= temp.next;
-
-                temp.next = new Node(newItem);
-                numItems++;
-
-        }else{
-                head = new Node(newItem);
-                numItems++;
-        }
-}
-
+public void enqueue(Object newItem) {
+   if (head == null) {
+     head = new Node(newItem);
+   } else {
+     Node temp = head;
+     while(temp.next != null) {
+       temp = temp.next;
+     }
+     temp.next = new Node(newItem);
+   }
+   numItems++;
+ }
 
 
 //remove item from the top of the Node
@@ -77,10 +74,11 @@ public Object dequeue() throws QueueEmptyException {
 //return object found at top of the Node.
 //if the Node Queue is empty, an error gets thrown
 public Object peek() throws QueueEmptyException {
-        if (head != null) {
-                return head.item;
-        }else
+        if (head == null) {
                 throw new QueueEmptyException("cannot use peek on empty Queue");
+        }else
+                return head.item;
+
 
 }
 
