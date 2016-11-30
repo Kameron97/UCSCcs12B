@@ -1,1 +1,16 @@
-Edit before submitting
+Kameron Gill
+no partners
+1476833
+kgill2@ucsc.edu
+
+The point of this assignment is to make an dictionary ADT  made in hash
+
+
+Included files:
+
+DictionaryClient.c  - File given to us by Charlie
+Dictionary.h  - File give to us by charlie
+Makefile - this will compile all of code to make an executable DictionaryClient
+README  - description of what is in the assignment
+Dictionary.c - Dictionary file. This is what was written by me. It will make dictionary into a hash data structure
+DictionaryTest.c - Test client to test Dictionary.c

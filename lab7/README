@@ -1,1 +1,14 @@
-Edit before submitting
+Kameronjeet Gill
+1476833
+kgill2@ucsc.edu
+
+Files included:
+
+DictionaryInterface.java - Interface for Dictionary ADT
+DuplicateKeyException.java - for Dictionary.java
+KeyNotFoundException.java - For Dictionary.java
+DictionaryClient.java   -   for Dictionary.java
+
+Dictionary.java -  program made by me. This is an ADT based in a Binary Search Tree.
+Makefile - compiles evertyhing for the program to work with DictionaryClient
+README - SUmmary of files.
